@@ -53,7 +53,7 @@ public class Main_14500 {
 		}
 		for(int i=0; i<4; i++) {
 			if(dir[i]) continue;
-			//갈수 있는지부터 확인,
+		
 			int nx=x+dx[i]; int ny=y+dy[i];
 			if(nx>=0 && ny>=0 && nx<N && ny<M) {
 				dir[i]=true;
@@ -62,6 +62,7 @@ public class Main_14500 {
 			}
 		}
 	}
+	//ㅗ 제외한 나머지 모양은 dfs로 가능,
 	private static void DFS(int x, int y, int cnt, int ans) {
 		//종료조건
 		if(cnt==4) {
