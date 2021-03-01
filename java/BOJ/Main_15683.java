@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
+/** 주의 :값을 입력받음과 동시에, CCTV5를 설치해주었을 때 빈 값들 처리못함.*/
 public class Main_15683 {
 	private static class Pair{
 		int x,y;
