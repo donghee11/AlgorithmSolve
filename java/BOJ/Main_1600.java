@@ -49,7 +49,6 @@ public class Main_1600 {
 		}
 		bfs();
 		if(answer==Integer.MAX_VALUE) answer=-1;
-		if(H==1 && W==1) answer=0;
 		System.out.println(answer);
 	}//end of main
 	private static void bfs() {
