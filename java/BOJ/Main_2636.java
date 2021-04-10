@@ -35,10 +35,7 @@ public class Main_2636 {
 				}
 			}
 		}//end of input 
-		//처음 치즈는 외벽의 1과 만나고 있는 2를 찾아서 cheeze 리스트에 넣어서 보관,
-		//다음에는 cheeze리스트에 있는 것들중에서 2를 찾아서 보관,
-		//그다음에도 쭉쭉쭉
-		//리스트가 비면 종료한다.
+
 		while(cheezeCnt>0) {
 			first_bfs();
 		}
@@ -77,32 +74,5 @@ public class Main_2636 {
 		for(int i=0; i<cheeze.size(); i++)
 			map[cheeze.get(i)[0]][cheeze.get(i)[1]]=0;
 	}
-	private static void bfs() {
-		//일반 bfs시작, cheeze에 담겨있는 애들을 queue에 넣고 bfs를 돌린다.
-		visit=new boolean[N][M];
-		q=new LinkedList<>();
-		for(int i=0; i<cheeze.size(); i++) {
-			q.add(new int[] {cheeze.get(i)[0], cheeze.get(i)[1]});
-			visit[cheeze.get(i)[0]][cheeze.get(i)[1]]=true;
-		}
-		cheeze=new ArrayList<>();
-		while(!q.isEmpty()) {
-			int []p=q.poll();
-			int r=p[0]; int c=p[1];
-			for(int i=0; i<4; i++) {
-				int nr=r+dr[i]; int nc=c+dc[i];
-				if(nr>=0 && nc>=0 && nr<N && nc<M && !visit[nr][nc]) {
-					if(map[nr][nc]==0) visit[nr][nc]=true;
-					else {
-						visit[nr][nc]=true;
-						cheeze.add(new int[] {nr,nc});
-					}
-				}
-			}
-		}
-		cnt=cheeze.size();
-		
-		cheezeCnt-=cnt;
-		time++;
-	}
 }
+
