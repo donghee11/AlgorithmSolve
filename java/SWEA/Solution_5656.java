@@ -116,7 +116,7 @@ public class Solution_5656 {
 					int t=map[j][i];
 					int tmp=j+1;
 					while(tmp<=H && map[tmp][i]==0) {
-						//0일때까지 계속내려
+						//0일때까지
 						tmp++;
 					}
 					map[j][i]=0;
