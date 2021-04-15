@@ -43,7 +43,6 @@ public class Solution_2115 {
 	private static void comb(int cnt, int idx) {
 		if(cnt==2) {
 			calc();
-			
 			return; 
 		}
 		
@@ -63,16 +62,7 @@ public class Solution_2115 {
 		dfs(r,c+1,cnt+1,ans,sum); //선택 안하는 경우
 		
 	}
-	private static void dfs2(int r, int c, int cnt, int ans, int sum) {
-		if(sum>C) return; //이 경우는 xx
-		if(cnt==M) {
-			second_person=Math.max(second_person, ans);
-			return;
-		}
-		dfs2(r, c+1, cnt+1, ans+map[r][c]*map[r][c], sum+map[r][c]);
-		dfs2(r,c+1,cnt+1,ans,sum); //선택 안하는 경우
-		
-	}
+
 	
 	private static void calc() {
 		//visit 가 i인 두개의 가로줄 선택
@@ -86,8 +76,10 @@ public class Solution_2115 {
 			for(int j=0; j+M-1<N; j++) {
 				first_person=0; second_person=0;
 				dfs(row[0],i,0,0,0);
-				dfs2(row[1],j,0,0,0);
-				answer=Math.max(answer, first_person+second_person);
+				int x=first_person;
+				first_person=0;
+				dfs(row[1],j,0,0,0);
+				answer=Math.max(answer, first_person+x);
 			}
 		}
 	}
@@ -98,7 +90,7 @@ public class Solution_2115 {
 				
 				first_person=0; second_person=0;
 				dfs(r,i,0,0,0);
-				dfs2(r,j,0,0,0);
+				dfs(r,j,0,0,0);
 				answer=Math.max(answer, first_person+second_person);
 				
 			}
