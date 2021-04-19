@@ -79,7 +79,7 @@ public class Solution_2477 {
 			}
 			while(now>0 && nowCnt<=K) {
 				if(time>=person[nowCnt].time) { //창구가 남아있고, 손님이온이후면,
-					//비어있는 창구중 제일 빠른놈
+					
 					int x=checkPlaceA(); //x창구로 보내야해
 					now--;
 					p1[x].flag=true; //사람 있음 표시
