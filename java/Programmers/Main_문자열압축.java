@@ -15,7 +15,6 @@ public class Main_문자열압축 {
 			String newstr="";
 			int idx=0;
 			for(int i=len; i+len<length; i+=len) {
-//				System.out.println(i+" "+len);
 				String st=s.substring(i,i+len);
 				if(st.equals(tmp)) {
 					idx++;
@@ -38,8 +37,7 @@ public class Main_문자열압축 {
 				else if(idx<1000) newstr+="aaa";
 				newstr+=tmp;
 			}
-			System.out.println(len);
-			System.out.println(newstr);
+
 			answer=Math.min(answer, newstr.length());
 		}
 		return answer;
